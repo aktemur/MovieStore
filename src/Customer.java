@@ -23,8 +23,6 @@ class Customer {
         int totalPoints = 0;
         String result = "Rental Record for " + getName() + "\n";
         for (Rental rental : rentals) {
-
-            // show figures for this rental
             result += "\t" + rental.getMovie().getTitle() + "\t"
                     + String.valueOf(getPriceFor(rental)) + "\n";
             totalAmount += getPriceFor(rental);
@@ -40,7 +38,6 @@ class Customer {
 
     private double getPriceFor(Rental rental) {
         double amount = 0;
-        // determine amounts for each rental
         switch (rental.getMovie().getPriceCode()) {
             case Movie.REGULAR:
                 amount += 2;
@@ -61,7 +58,6 @@ class Customer {
     }
 
     private int getPointsFor(Rental rental) {
-        // add frequent renter points
         int points = 1;
         // add bonus for a two day new release rental
         if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE)
