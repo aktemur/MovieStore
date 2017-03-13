@@ -42,4 +42,12 @@ public class Movie {
         }
         return amount;
     }
+
+    public int getPoints(int daysRented) {
+        int points = 1;
+        // add bonus for a two day new release rental
+        if ((priceCode == Movie.NEW_RELEASE) && daysRented > 1)
+            points++;
+        return points;
+    }
 }
