@@ -24,16 +24,13 @@ class Customer {
         String result = "Rental Record for " + getName() + "\n";
         for (Rental rental : rentals) {
             result += "\t" + rental.getMovie().getTitle() + "\t"
-                    + String.valueOf(rental.getPrice()) + "\n";
+                    + rental.getPrice() + "\n";
             totalAmount += rental.getPrice();
             totalPoints += rental.getPoints();
         }
         // add footer lines
-        result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-        result += "You earned " + String.valueOf(totalPoints)
-                + " frequent renter points";
+        result += "Amount owed is " + totalAmount + "\n";
+        result += "You earned " + totalPoints + " frequent renter points";
         return result;
-
     }
-
 }
