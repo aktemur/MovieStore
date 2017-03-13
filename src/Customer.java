@@ -26,7 +26,7 @@ class Customer {
             result += "\t" + rental.getMovie().getTitle() + "\t"
                     + String.valueOf(rental.getPrice()) + "\n";
             totalAmount += rental.getPrice();
-            totalPoints += getPointsFor(rental);
+            totalPoints += rental.getPoints();
         }
         // add footer lines
         result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
@@ -36,12 +36,4 @@ class Customer {
 
     }
 
-    private int getPointsFor(Rental rental) {
-        int points = 1;
-        // add bonus for a two day new release rental
-        if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE)
-                && rental.getDaysRented() > 1)
-            points++;
-        return points;
-    }
 }
