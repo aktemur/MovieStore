@@ -23,8 +23,7 @@ class Customer {
         int totalPoints = 0;
         String result = "Rental Record for " + getName() + "\n";
         for (Rental rental : rentals) {
-            result += "\t" + rental.getMovie().getTitle() + "\t"
-                    + rental.getPrice() + "\n";
+            result += rental.statement();
             totalAmount += rental.getPrice();
             totalPoints += rental.getPoints();
         }

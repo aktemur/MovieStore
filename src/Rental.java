@@ -22,4 +22,9 @@ public class Rental {
     public int getPoints() {
         return movie.getPoints(daysRented);
     }
+
+    public String statement() {
+        return "\t" + getMovie().getTitle() + "\t"
+                + getPrice() + "\n";
+    }
 }
