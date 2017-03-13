@@ -6,9 +6,6 @@ public class NewReleasePriceCode extends PriceCode {
 
     @Override
     public int getPoints(int daysRented) {
-        int points = 1;
-        if (daysRented > 1)
-            points++;
-        return points;
+        return (daysRented > 1)? 2 : 1;
     }
 }
