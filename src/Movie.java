@@ -24,19 +24,7 @@ public class Movie {
     }
 
     public double getPrice(int daysRented) {
-        double amount = 0;
-        if (priceCode == REGULAR) {
-            amount += 2;
-            if (daysRented > 2)
-                amount += (daysRented - 2) * 1.5;
-        } else if (priceCode == NEW_RELEASE) {
-            amount += daysRented * 3;
-        } else if (priceCode == CHILDRENS) {
-            amount += 1.5;
-            if (daysRented > 3)
-                amount += (daysRented - 3) * 1.5;
-        }
-        return amount;
+        return priceCode.getPrice(daysRented);
     }
 
     public int getPoints(int daysRented) {
