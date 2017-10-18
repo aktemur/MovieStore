@@ -1,4 +1,5 @@
 public abstract class PriceCode {
+    // This is a TEMPLATE METHOD
     public final double getPrice(int daysRented) {
         double amount = basePrice();
         if (daysRented > extraChargeThreshold())
