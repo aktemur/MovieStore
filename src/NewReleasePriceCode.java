@@ -1,7 +1,17 @@
 public class NewReleasePriceCode extends PriceCode {
     @Override
-    public double getPrice(int daysRented) {
-        return daysRented * 3;
+    protected double basePrice() {
+        return 0;
+    }
+
+    @Override
+    protected int extraChargeThreshold() {
+        return 0;
+    }
+
+    @Override
+    protected double extraChargePerDay() {
+        return 3;
     }
 
     @Override

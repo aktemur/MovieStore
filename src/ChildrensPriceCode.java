@@ -1,9 +1,16 @@
 public class ChildrensPriceCode extends PriceCode {
     @Override
-    public double getPrice(int daysRented) {
-        double amount = 1.5;
-        if (daysRented > 3)
-            amount += (daysRented - 3) * 1.5;
-        return amount;
+    protected double basePrice() {
+        return 1.5;
+    }
+
+    @Override
+    protected int extraChargeThreshold() {
+        return 3;
+    }
+
+    @Override
+    protected double extraChargePerDay() {
+        return 1.5;
     }
 }
